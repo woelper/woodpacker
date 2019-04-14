@@ -2,378 +2,475 @@
   "Items": [
     {
       "name": "500x10x10",
-      "remaining_length": 0.0,
+      "remaining_length": 50.0,
       "cuts": [
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0
+        150.0,
+        150.0,
+        150.0
       ]
     },
     {
       "name": "500x10x10",
-      "remaining_length": 0.0,
+      "remaining_length": 30.0,
       "cuts": [
+        150.0,
         200.0,
-        200.0,
-        100.0
+        120.0
       ]
     },
     {
       "name": "500x10x10",
-      "remaining_length": 0.0,
+      "remaining_length": 100.0,
       "cuts": [
         200.0,
-        100.0,
-        100.0,
-        100.0
+        200.0
       ]
     },
     {
       "name": "500x10x10",
-      "remaining_length": 0.0,
+      "remaining_length": 100.0,
       "cuts": [
-        400.0,
-        100.0
+        400.0
       ]
     },
     {
       "name": "500x10x10",
-      "remaining_length": 0.0,
+      "remaining_length": 100.0,
       "cuts": [
-        400.0,
-        100.0
+        400.0
       ]
     },
     {
       "name": "500x10x10",
-      "remaining_length": 0.0,
+      "remaining_length": 100.0,
       "cuts": [
-        400.0,
-        100.0
+        400.0
       ]
     },
     {
       "name": "500x10x10",
-      "remaining_length": 0.0,
+      "remaining_length": 100.0,
       "cuts": [
-        400.0,
-        100.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "250x13x2",
-      "remaining_length": 50.0,
-      "cuts": [
-        200.0
-      ]
-    },
-    {
-      "name": "400x20x3",
-      "remaining_length": 0.0,
-      "cuts": [
-        100.0,
-        100.0,
-        100.0,
-        100.0
-      ]
-    },
-    {
-      "name": "400x20x3",
-      "remaining_length": 0.0,
-      "cuts": [
-        100.0,
-        200.0,
-        100.0
-      ]
-    },
-    {
-      "name": "400x20x3",
-      "remaining_length": 0.0,
-      "cuts": [
-        200.0,
-        200.0
-      ]
-    },
-    {
-      "name": "400x20x3",
-      "remaining_length": 0.0,
-      "cuts": [
-        200.0,
-        200.0
-      ]
-    },
-    {
-      "name": "400x20x3",
-      "remaining_length": 0.0,
-      "cuts": [
-        200.0,
-        200.0
-      ]
-    },
-    {
-      "name": "400x20x3",
-      "remaining_length": 0.0,
-      "cuts": [
-        200.0,
-        200.0
-      ]
-    },
-    {
-      "name": "400x20x3",
-      "remaining_length": 0.0,
-      "cuts": [
-        200.0,
-        200.0
-      ]
-    },
-    {
-      "name": "400x20x3",
-      "remaining_length": 0.0,
-      "cuts": [
-        200.0,
-        100.0,
-        100.0
-      ]
-    },
-    {
-      "name": "400x20x3",
-      "remaining_length": 0.0,
-      "cuts": [
-        100.0,
-        100.0,
-        100.0,
-        100.0
+        400.0
       ]
     },
     {
       "name": "500x10x10",
+      "remaining_length": 140.0,
+      "cuts": [
+        120.0,
+        120.0,
+        120.0
+      ]
+    },
+    {
+      "name": "250x13x2",
       "remaining_length": 0.0,
       "cuts": [
-        200.0,
-        200.0,
-        100.0
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
+      ]
+    },
+    {
+      "name": "250x13x2",
+      "remaining_length": 0.0,
+      "cuts": [
+        250.0
       ]
     },
     {
       "name": "400x20x3",
-      "remaining_length": 0.0,
+      "remaining_length": 60.0,
       "cuts": [
-        100.0,
-        100.0,
-        100.0,
-        100.0
+        170.0,
+        170.0
       ]
     },
     {
       "name": "400x20x3",
-      "remaining_length": 0.0,
+      "remaining_length": 60.0,
       "cuts": [
-        100.0,
-        100.0,
-        100.0,
-        100.0
+        170.0,
+        170.0
+      ]
+    },
+    {
+      "name": "400x20x3",
+      "remaining_length": 60.0,
+      "cuts": [
+        170.0,
+        170.0
+      ]
+    },
+    {
+      "name": "400x20x3",
+      "remaining_length": 60.0,
+      "cuts": [
+        170.0,
+        170.0
+      ]
+    },
+    {
+      "name": "400x20x3",
+      "remaining_length": 60.0,
+      "cuts": [
+        170.0,
+        170.0
+      ]
+    },
+    {
+      "name": "400x20x3",
+      "remaining_length": 10.0,
+      "cuts": [
+        220.0,
+        170.0
+      ]
+    },
+    {
+      "name": "400x20x3",
+      "remaining_length": 10.0,
+      "cuts": [
+        220.0,
+        170.0
+      ]
+    },
+    {
+      "name": "400x20x3",
+      "remaining_length": 10.0,
+      "cuts": [
+        220.0,
+        170.0
+      ]
+    },
+    {
+      "name": "400x20x3",
+      "remaining_length": 10.0,
+      "cuts": [
+        220.0,
+        170.0
+      ]
+    },
+    {
+      "name": "400x20x3",
+      "remaining_length": 10.0,
+      "cuts": [
+        220.0,
+        170.0
+      ]
+    },
+    {
+      "name": "400x20x3",
+      "remaining_length": 10.0,
+      "cuts": [
+        220.0,
+        170.0
+      ]
+    },
+    {
+      "name": "400x20x3",
+      "remaining_length": 10.0,
+      "cuts": [
+        220.0,
+        170.0
+      ]
+    },
+    {
+      "name": "400x20x3",
+      "remaining_length": 30.0,
+      "cuts": [
+        220.0,
+        150.0
+      ]
+    },
+    {
+      "name": "400x20x3",
+      "remaining_length": 30.0,
+      "cuts": [
+        220.0,
+        150.0
+      ]
+    },
+    {
+      "name": "400x20x3",
+      "remaining_length": 30.0,
+      "cuts": [
+        220.0,
+        150.0
+      ]
+    },
+    {
+      "name": "400x20x3",
+      "remaining_length": 30.0,
+      "cuts": [
+        220.0,
+        150.0
+      ]
+    },
+    {
+      "name": "400x20x3",
+      "remaining_length": 30.0,
+      "cuts": [
+        220.0,
+        150.0
+      ]
+    },
+    {
+      "name": "400x20x3",
+      "remaining_length": 30.0,
+      "cuts": [
+        220.0,
+        150.0
+      ]
+    },
+    {
+      "name": "400x20x3",
+      "remaining_length": 30.0,
+      "cuts": [
+        220.0,
+        150.0
       ]
     },
     {
       "name": "500x10x10",
-      "remaining_length": 0.0,
+      "remaining_length": 100.0,
       "cuts": [
-        100.0,
-        100.0,
-        100.0,
-        100.0,
-        100.0
+        200.0,
+        200.0
+      ]
+    },
+    {
+      "name": "400x20x3",
+      "remaining_length": 100.0,
+      "cuts": [
+        150.0,
+        150.0
+      ]
+    },
+    {
+      "name": "500x10x10",
+      "remaining_length": 50.0,
+      "cuts": [
+        150.0,
+        150.0,
+        150.0
+      ]
+    },
+    {
+      "name": "500x10x10",
+      "remaining_length": 50.0,
+      "cuts": [
+        150.0,
+        150.0,
+        150.0
       ]
     }
   ]
