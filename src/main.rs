@@ -32,7 +32,8 @@ struct Piece {
 struct Order{
     name: String,
     remaining_length: f64,
-    cuts: Vec<f64>
+    cuts: Vec<f64>,
+    Number: usize
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -43,21 +44,23 @@ struct Orders {
 
 impl Orders {
     fn add(&mut self, piece: &Piece, template: &Template) {
+
         for mut order in &mut self.Items {
-            if piece.length <= order.remaining_length {
-                order.cuts.push(piece.length);
-                order.remaining_length -= piece.length;
-                println!("Added a segment to an order: {:?}", piece);
-                return;
-            }
+            if order.name == template.name && piece.length <= order.remaining_length {
+    order.cuts.push(piece.length);
+    order.remaining_length -= piece.length;
+    println!("Added segment {:?} to {:?}", piece, order);
+    return;
+}
         }
         // add new order item
         let o = Order {
             name: template.name.clone(),
             remaining_length: template.length - piece.length,
-            cuts: vec![piece.length]
+            cuts: vec![piece.length],
+            Number: self.Items.len()
         };
-        println!("Created new order item {:?}", o);
+        // println!("Created new order {:?}", o);
 
         self.Items.push(o);
 
@@ -83,12 +86,17 @@ fn main() {
         for template in &templates {
             if template.equals(&piece) {
                 // dbg!(&piece);
+                // println!("{:?} == {:?}", template, piece);
                 orders.add(&piece, &template);
             }
         }
 
     }
     
+    for val in &orders.Items {
+        println!("{}\tRestlaenge: {}\tSchnitte: {:?}",val.name, val.remaining_length, val.cuts);
+    }
+
     let writer = BufWriter::new(File::create("order.json").unwrap());
     serde_json::to_writer_pretty(writer, &orders).unwrap();
 
