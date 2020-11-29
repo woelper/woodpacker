@@ -28,10 +28,16 @@ impl Template {
 
     fn draw(&mut self, ui: &mut egui::Ui) {
         ui.label(format!("{} {} {} ", self.length, self.width, self.height));
+        ui.text_edit_singleline(&mut self.name);
         ui.horizontal(|ui| {
+            ui.label("Size");
             ui.add(DragValue::f64(&mut self.length));
             ui.add(DragValue::f64(&mut self.width));
             ui.add(DragValue::f64(&mut self.height));
+        });
+        ui.horizontal(|ui| {
+            ui.label("Price");
+            ui.add(DragValue::f32(&mut self.price));
         });
     }
 }
@@ -48,6 +54,7 @@ impl Piece {
     fn draw(&mut self, ui: &mut egui::Ui) {
         ui.label(format!("{} {} {} ", self.length, self.width, self.height));
         ui.horizontal(|ui| {
+            ui.label("Size");
             ui.add(DragValue::f64(&mut self.length));
             ui.add(DragValue::f64(&mut self.width));
             ui.add(DragValue::f64(&mut self.height));
@@ -64,6 +71,18 @@ struct Order {
     price: f32,
 }
 
+impl Order {
+
+    fn draw(&mut self, ui: &mut egui::Ui) {
+        ui.text_edit_singleline(&mut self.name);
+        ui.label(format!("Remaining length {}", self.remaining_length));
+        ui.label(format!("Cuts {:?}", self.cuts));
+        ui.label(format!("Number {}", self.number));
+        ui.label(format!("Price {}", self.price));
+    }
+
+}
+
 #[derive(Serialize, Deserialize, Debug, Default)]
 struct Orders {
     items: Vec<Order>,
@@ -72,6 +91,18 @@ struct Orders {
 }
 
 impl Orders {
+
+    fn draw(&mut self, ui: &mut egui::Ui) {
+        for i in &mut self.items {
+            i.draw(ui);
+        }
+        ui.label(format!("Sum {:?}", self.sum));
+        ui.label(format!("Price {}", self.price));
+
+
+    }
+
+
     fn add(&mut self, piece: &Piece, template: &Template) {
         for mut order in &mut self.items {
             if order.name == template.name && piece.length <= order.remaining_length {
@@ -103,6 +134,8 @@ impl Orders {
             // self.sum.insert(item.name.clone(), 1);
         }
     }
+
+ 
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -149,6 +182,10 @@ impl egui::app::App for ExampleApp {
                 for t in &mut self.templates {
                     t.draw(ui)
                 }
+            });
+
+            Window::new("Order").show(ui.ctx(), |ui| {
+                self.orders.draw(ui);
             });
 
             if ui.button("Add piece").clicked {
