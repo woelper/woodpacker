@@ -3,13 +3,15 @@ extern crate serde_derive;
 extern crate serde;
 extern crate serde_json;
 use egui;
+use egui::containers::Window;
+use egui::widgets::{DragValue, Slider};
 use std::collections::HashMap;
 use std::fs::File;
 use std::io::BufReader;
 use std::io::BufWriter;
 
 /// A `Template` is a piece that is available from a vendor.
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Default)]
 struct Template {
     length: f64,
     width: f64,
@@ -24,8 +26,13 @@ impl Template {
         self.width == piece.width && self.height == piece.height
     }
 
-    fn draw(&self, ui: &mut egui::Ui) {
+    fn draw(&mut self, ui: &mut egui::Ui) {
         ui.label(format!("{} {} {} ", self.length, self.width, self.height));
+        ui.horizontal(|ui| {
+            ui.add(DragValue::f64(&mut self.length));
+            ui.add(DragValue::f64(&mut self.width));
+            ui.add(DragValue::f64(&mut self.height));
+        });
     }
 }
 
@@ -38,8 +45,13 @@ struct Piece {
 }
 
 impl Piece {
-    fn draw(&self, ui: &mut egui::Ui) {
+    fn draw(&mut self, ui: &mut egui::Ui) {
         ui.label(format!("{} {} {} ", self.length, self.width, self.height));
+        ui.horizontal(|ui| {
+            ui.add(DragValue::f64(&mut self.length));
+            ui.add(DragValue::f64(&mut self.width));
+            ui.add(DragValue::f64(&mut self.height));
+        });
     }
 }
 
@@ -61,14 +73,13 @@ struct Orders {
 
 impl Orders {
     fn add(&mut self, piece: &Piece, template: &Template) {
-
         for mut order in &mut self.items {
             if order.name == template.name && piece.length <= order.remaining_length {
-    order.cuts.push(piece.length);
-    order.remaining_length -= piece.length;
-    println!("Added segment {:?} to {:?}", piece, order);
-    return;
-}
+                order.cuts.push(piece.length);
+                order.remaining_length -= piece.length;
+                println!("Added segment {:?} to {:?}", piece, order);
+                return;
+            }
         }
         // add new order item
         let o = Order {
@@ -98,6 +109,7 @@ impl Orders {
 pub struct ExampleApp {
     templates: Vec<Template>,
     pieces: Vec<Piece>,
+    orders: Orders,
 }
 
 impl Default for ExampleApp {
@@ -105,6 +117,7 @@ impl Default for ExampleApp {
         Self {
             templates: vec![],
             pieces: vec![],
+            orders: Orders::default(),
         }
     }
 }
@@ -117,22 +130,51 @@ impl egui::app::App for ExampleApp {
         ctx: &std::sync::Arc<egui::Context>,
         integration_context: &mut egui::app::IntegrationContext,
     ) {
-        let ExampleApp { templates, pieces } = self;
+        let ExampleApp {
+            templates,
+            pieces,
+            orders,
+        } = self;
 
-        // Example used in `README.md`.
         egui::CentralPanel::default().show(ctx, |ui| {
             // ui.heading("My Egui Application");
 
-            for t in &self.templates {
-                t.draw(ui)
-            }
+            Window::new("Pieces").show(ui.ctx(), |ui| {
+                for p in &mut self.pieces {
+                    p.draw(ui)
+                }
+            });
 
-            for p in &self.pieces {
-                p.draw(ui)
-            }
+            Window::new("Templates").show(ui.ctx(), |ui| {
+                for t in &mut self.templates {
+                    t.draw(ui)
+                }
+            });
 
             if ui.button("Add piece").clicked {
                 self.pieces.push(Piece::default())
+            }
+
+            if ui.button("Add template").clicked {
+                self.templates.push(Template::default())
+            }
+
+            if ui.button("comp").clicked {
+                let mut orders = Orders {
+                    items: vec![],
+                    ..Default::default()
+                };
+                for piece in &self.pieces {
+                    for template in &self.templates {
+                        if template.equals(&piece) {
+                            // dbg!(&piece);
+                            // println!("{:?} == {:?}", template, piece);
+                            orders.add(&piece, &template);
+                        }
+                    }
+                }
+                orders.sum();
+                self.orders = orders;
             }
 
             ui.advance_cursor(16.0);
@@ -141,7 +183,7 @@ impl egui::app::App for ExampleApp {
             }
         });
 
-        integration_context.output.window_size = Some(ctx.used_size()); // resize the window to be just the size we need it to be
+        // integration_context.output.window_size = Some(ctx.used_size()); // resize the window to be just the size we need it to be
     }
 
     fn on_exit(&mut self, storage: &mut dyn egui::app::Storage) {
