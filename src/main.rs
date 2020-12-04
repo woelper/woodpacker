@@ -1,20 +1,22 @@
+#![feature(linked_list_cursors)]
 #[macro_use]
 extern crate serde_derive;
 extern crate serde;
 extern crate serde_json;
+use cut_optimizer_2d::*;
 use egui;
 use egui::containers::Window;
+use serde::{Deserialize, Serialize};
 
 mod pack;
 use pack::*;
 
-
-
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize)]
 pub struct WoodPackerApp {
     templates: Vec<Template>,
     pieces: Vec<Piece>,
     orders: Orders,
+    solution: Option<Solution>,
 }
 
 impl Default for WoodPackerApp {
@@ -23,6 +25,7 @@ impl Default for WoodPackerApp {
             templates: vec![],
             pieces: vec![],
             orders: Orders::default(),
+            solution: None,
         }
     }
 }
@@ -39,6 +42,7 @@ impl egui::app::App for WoodPackerApp {
             templates,
             pieces,
             orders,
+            solution,
         } = self;
 
         egui::CentralPanel::default().show(ctx, |ui| {
@@ -51,12 +55,12 @@ impl egui::app::App for WoodPackerApp {
                 let mut clones: Vec<usize> = vec![];
                 for (i, p) in self.pieces.iter_mut().enumerate() {
 
+                    p.draw(ui);
                     ui.horizontal(|ui| {
-                        p.draw(ui);
-                        if ui.button("del").clicked {
+                        if ui.button("-").clicked {
                             removals.push(i);
                         }
-                        if ui.button("clone").clicked {
+                        if ui.button("+").clicked {
                             clones.push(i);
                         }
 
@@ -87,6 +91,16 @@ impl egui::app::App for WoodPackerApp {
                 self.orders.draw(ui);
             });
 
+
+
+            if let Some(solution) = &self.solution {
+                Window::new("Solution").show(ui.ctx(), |ui| {
+                    for s in &solution.stock_pieces {
+                        s.draw(ui);
+                    }
+                });
+            }
+
             if ui.button("Add piece").clicked {
                 self.pieces.push(Piece::default())
             }
@@ -115,6 +129,13 @@ impl egui::app::App for WoodPackerApp {
                 orders.sum();
                 self.orders = orders;
             }
+
+            if ui.button("Pack advanced").clicked {
+                dbg!("pck");
+
+                self.solution = solve_advanced(&self.pieces, &self.templates[0]);
+            }
+
 
             ui.advance_cursor(16.0);
             if ui.button("Quit").clicked {
