@@ -292,6 +292,7 @@ dependencies = [
 [[package]]
 name = "cut-optimizer-2d"
 version = "0.1.1"
+source = "git+https://github.com/woelper/cut-optimizer-2d.git#d0f92deb5d28f56a674a215db114dceb88d5ecc3"
 dependencies = [
  "fnv",
  "rand",
