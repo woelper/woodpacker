@@ -1,21 +1,22 @@
 use cut_optimizer_2d::*;
+use eframe::egui::{self, Color32};
 use egui::math::Pos2;
-use egui::paint::color::Srgba;
-use egui::paint::command::Stroke;
+use egui::Stroke;
 use egui::widgets::{DragValue, Slider};
-use egui::{PaintCmd, Painter};
-use std::collections::{linked_list::Cursor, HashMap};
+use egui::{Painter};
+use std::collections::{ HashMap};
+use serde::{Serialize, Deserialize};
 
 fn draw_rect(ui: &mut egui::Ui, dim: Pos2, offset: Pos2, fill: bool) {
-    let mut paint_rect = ui.available();
+    let mut paint_rect = ui.available_rect_before_wrap();
     paint_rect.min += offset.to_vec2();
     paint_rect.max = paint_rect.min + dim.to_vec2();
     // paint_rect.max.x = dim.x;
     // paint_rect.max.y = dim.y;
     // paint_rect.max.x = height;
 
-    let color = Srgba::from_rgba_unmultiplied(128, 128, 128, 255);
-    let fill_color = Srgba::from_rgba_unmultiplied(64, 64, 128, 128);
+    let color = Color32::from_rgba_unmultiplied(128, 128, 128, 255);
+    let fill_color = Color32::from_rgba_unmultiplied(64, 64, 128, 128);
 
     if fill {
         ui.painter()
@@ -139,9 +140,9 @@ impl Piece {
 
             //ui.add(Painter::circle_filled(center, radius, fill_color))
 
-            let color = Srgba::from_rgb(128, 128, 128);
+            let color = Color32::from_rgb(128, 128, 128);
 
-            let mut paint_rect = ui.available();
+            let mut paint_rect = ui.available_rect_before_wrap();
             paint_rect.max.y = paint_rect.min.y + self.width as f32;
             paint_rect.max.x = paint_rect.min.x + self.length as f32;
 
