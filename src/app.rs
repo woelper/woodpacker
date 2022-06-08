@@ -36,7 +36,7 @@ impl epi::App for WoodPackerApp {
     fn setup(
         &mut self,
         _ctx: &egui::CtxRef,
-        _frame: &mut epi::Frame<'_>,
+        _frame: &epi::Frame,
         storage: Option<&dyn epi::Storage>,
     ) {
         if let Some(storage) = storage {
@@ -52,7 +52,7 @@ impl epi::App for WoodPackerApp {
 
     /// Called each time the UI needs repainting, which may be many times per second.
     /// Put your widgets into a `SidePanel`, `TopPanel`, `CentralPanel`, `Window` or `Area`.
-    fn update(&mut self, ctx: &egui::CtxRef, frame: &mut epi::Frame<'_>) {
+    fn update(&mut self, ctx: &egui::CtxRef, frame: &epi::Frame) {
         let WoodPackerApp {
             templates,
             pieces,
@@ -152,7 +152,7 @@ impl epi::App for WoodPackerApp {
             }
 
 
-            ui.advance_cursor(16.0);
+            ui.add_space(16.0);
 
         });
 

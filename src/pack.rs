@@ -1,6 +1,6 @@
 use cut_optimizer_2d::*;
 use eframe::egui::{self, Color32};
-use egui::math::Pos2;
+use egui::emath::Pos2;
 use egui::Stroke;
 use egui::widgets::{DragValue, Slider};
 use egui::{Painter};
@@ -110,13 +110,13 @@ impl Template {
         //ui.text_edit_singleline(&mut self.name);
         self.name = self.name();
         ui.horizontal(|ui| {
-            ui.add(DragValue::f64(&mut self.length));
-            ui.add(DragValue::f64(&mut self.width));
-            ui.add(DragValue::f64(&mut self.height));
+            ui.add(DragValue::new(&mut self.length));
+            ui.add(DragValue::new(&mut self.width));
+            ui.add(DragValue::new(&mut self.height));
         });
         ui.horizontal(|ui| {
             ui.label("Price");
-            ui.add(DragValue::f32(&mut self.price));
+            ui.add(DragValue::new(&mut self.price));
         });
     }
 }
@@ -134,9 +134,9 @@ impl Piece {
         //ui.label(format!("{} {} {} ", self.length, self.width, self.height));
         ui.horizontal(|ui| {
             ui.label("Size");
-            ui.add(DragValue::f64(&mut self.length));
-            ui.add(DragValue::f64(&mut self.width));
-            ui.add(DragValue::f64(&mut self.height));
+            ui.add(DragValue::new(&mut self.length));
+            ui.add(DragValue::new(&mut self.width));
+            ui.add(DragValue::new(&mut self.height));
 
             //ui.add(Painter::circle_filled(center, radius, fill_color))
 
